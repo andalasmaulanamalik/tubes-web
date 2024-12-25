@@ -15,6 +15,43 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @if(auth()->user() && auth()->user()->role === 'admin')
+                    <x-nav-link>
+                        {{ __('Manajemen Cabang') }}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{ __('Manajemen Pengguna') }}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{ __('Monitoring Transaksi') }}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{ __('Monitoring Stok') }}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{ __('Laporan') }}
+                    </x-nav-link>
+                    @endif
+
+                    @if(auth()->user() && auth()->user()->role === 'manager')
+                    <x-nav-link>
+                        {{ __('Manajemen Transaksi') }}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{ __('Manajemen Stok') }}
+                    </x-nav-link>
+                    <x-nav-link>
+                        {{ __('Laporan') }}
+                    </x-nav-link>
+                    @endif
+
+                    @if(auth()->user() && auth()->user()->role === 'kasir')
+                    <x-nav-link>
+                        {{ __('Transaksi') }}
+                    </x-nav-link>
+                    @endif
+
                 </div>
             </div>
 
