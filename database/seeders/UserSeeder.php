@@ -37,5 +37,15 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'), // Replace with a secure password
             'role' => 'kasir',
         ]);
+
+        $admin = User::find(1); // ID 1 untuk admin
+        $admin->assignRole('admin');
+
+
+        $manager = User::find(2);
+        $manager->assignRole('manager');
+
+        $kasir = User::find(3);
+        $kasir->assignRole('kasir');
     }
 }

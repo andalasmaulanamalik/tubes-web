@@ -17,19 +17,19 @@
                     </x-nav-link>
 
                     @if(auth()->user() && auth()->user()->role === 'admin')
-                    <x-nav-link>
+                    <x-nav-link :href="route('cabang.index')" :active="request()->routeIs('cabang.index')">
                         {{ __('Manajemen Cabang') }}
                     </x-nav-link>
-                    <x-nav-link>
+                    <x-nav-link :href="route('pengguna.index')" :active="request()->routeIs('pengguna.index')">
                         {{ __('Manajemen Pengguna') }}
                     </x-nav-link>
-                    <x-nav-link>
+                    <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.index')">
                         {{ __('Monitoring Transaksi') }}
                     </x-nav-link>
-                    <x-nav-link>
+                    <x-nav-link :href="route('stok.index')" :active="request()->routeIs('stok.index')">
                         {{ __('Monitoring Stok') }}
                     </x-nav-link>
-                    <x-nav-link>
+                    <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.index')">
                         {{ __('Laporan') }}
                     </x-nav-link>
                     @endif
@@ -47,8 +47,11 @@
                     @endif
 
                     @if(auth()->user() && auth()->user()->role === 'kasir')
-                    <x-nav-link>
+                    <x-nav-link :href="route('penjualan')" :active="request()->routeIs('penjualan')">
                         {{ __('Transaksi') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('produk.index')" :active="request()->routeIs('produk.index')">
+                        {{ __('List Produk') }}
                     </x-nav-link>
                     @endif
 
