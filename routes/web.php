@@ -28,9 +28,17 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/cabang', [CabangController::class, 'index'])->name('cabang.index');
+    Route::get('/cabang/create', [CabangController::class, 'create'])->name('cabang.create');
+    Route::post('/cabang', [CabangController::class, 'store'])->name('cabang.store');
+
     Route::get('/pengguna', [UserController::class, 'index'])->name('pengguna.index');
+    Route::get('/pengguna/create', [UserController::class, 'create'])->name('pengguna.create');
+    Route::post('/pengguna', [UserController::class, 'store'])->name('pengguna.store');
+
     Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+
     Route::get('/stok', [StokController::class, 'index'])->name('stok.index');
+    
     Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
 
 });

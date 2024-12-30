@@ -15,13 +15,16 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('cabang_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('produk_id');
+            $table->integer('quantity');
             $table->double('total_harga');
             $table->date('tanggal_transaksi');
             $table->timestamps();
 
             $table->foreign('cabang_id')->references('id')->on('cabang_toko');
             $table->foreign('user_id')->references('id')->on('users');
-        });
+            $table->foreign('produk_id')->references('id')->on('produk');
+        }); 
     }
 
     /**
