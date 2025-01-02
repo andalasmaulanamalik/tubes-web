@@ -15,7 +15,11 @@ class CabangSeeder extends Seeder
     public function run(): void
     {
         DB::table("cabang_toko")->insert([
-            ['nama' =>'Malik Grosir', 'alamat'=> 'Cipanas', 'user_id'=> 2]
+            ['nama' =>'Malik Grosir', 'alamat'=> 'Cipanas', 'user_id'=> 2],
+            ['nama' =>'Andalas Grosir', 'alamat'=> 'Cipanas', 'user_id'=> 3],
+            ['nama' =>'Maulana Grosir', 'alamat'=> 'Cipanas', 'user_id'=> 4],
+            ['nama' =>'Ibrahim Grosir', 'alamat'=> 'Cipanas', 'user_id'=> 5],
+            ['nama' =>'Aper Grosir', 'alamat'=> 'Cipanas', 'user_id'=> 6]
         ]);
     }
 }

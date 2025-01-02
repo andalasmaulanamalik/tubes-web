@@ -12,9 +12,6 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
 
                     @if(auth()->user() && auth()->user()->role === 'admin')
                     <x-nav-link :href="route('cabang.index')" :active="request()->routeIs('cabang.index')">
@@ -29,20 +26,14 @@
                     <x-nav-link :href="route('stok.index')" :active="request()->routeIs('stok.index')">
                         {{ __('Monitoring Stok') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.index')">
-                        {{ __('Laporan') }}
-                    </x-nav-link>
                     @endif
 
                     @if(auth()->user() && auth()->user()->role === 'manager')
-                    <x-nav-link>
+                    <x-nav-link :href="route('riwayatTransaksi')" :active="request()->routeIs('riwayatTransaksi')">
                         {{ __('Manajemen Transaksi') }}
                     </x-nav-link>
-                    <x-nav-link>
+                    <x-nav-link :href="route('riwayatProduk')" :active="request()->routeIs('riwayatProduk')">
                         {{ __('Manajemen Stok') }}
-                    </x-nav-link>
-                    <x-nav-link>
-                        {{ __('Laporan') }}
                     </x-nav-link>
                     @endif
 
@@ -50,11 +41,22 @@
                     <x-nav-link :href="route('penjualan')" :active="request()->routeIs('penjualan')">
                         {{ __('Transaksi') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('produk.index')" :active="request()->routeIs('produk.index')">
-                        {{ __('List Produk') }}
+                    @endif
+
+                    @if(auth()->user() && auth()->user()->role === 'supervisor')
+                    <x-nav-link :href="route('supervisor.index')" :active="request()->routeIs('supervisor.index')">
+                        {{ __('Riwayat Transaksi') }}
                     </x-nav-link>
                     @endif
 
+                    @if(auth()->user() && auth()->user()->role === 'gudang')
+                    <x-nav-link :href="route('produk.index')" :active="request()->routeIs('produk.index')">
+                        {{ __('List Produk') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('riwayat.index')" :active="request()->routeIs('riwayat.index')">
+                        {{ __('Riwayat Stok') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 

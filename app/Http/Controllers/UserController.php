@@ -10,11 +10,11 @@ class UserController extends Controller
     public function index()
     {
         $user= User::all();
-        return view('pengguna.index', compact('user'));
+        return view('admin/pengguna.index', compact('user'));
     }
 
     public function create(){
-        return view('pengguna.create');
+        return view('admin/pengguna.create');
     }
 
     public function store(Request $request)
@@ -40,6 +40,6 @@ class UserController extends Controller
             'message' => 'Pengguna berhasil ditambahkan',
             'alert-type' => 'success'
         );
-        return redirect()->route('pengguna.index')->with($notification);
+        return redirect()->route('admin/pengguna.index')->with($notification);
     }
 }

@@ -14,38 +14,87 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create Admin User
+        // Admin User
         User::create([
             'name' => 'Jayusman',
             'email' => 'admin@example.com',
-            'password' => Hash::make('password'), // Replace with a secure password
+            'password' => Hash::make('password'), 
             'role' => 'admin',
         ]);
 
-        // Create Manager User
+        // Manager User
         User::create([
-            'name' => 'Manager Toko',
-            'email' => 'manager@example.com',
-            'password' => Hash::make('password'), // Replace with a secure password
+            'name' => 'Malik Manager',
+            'email' => 'manager1@example.com',
+            'password' => Hash::make('password'), 
             'role' => 'manager',
         ]);
 
-        // Create Kasir User
         User::create([
-            'name' => 'Kasir Toko',
+            'name' => 'Andalas Manager',
+            'email' => 'manager2@example.com',
+            'password' => Hash::make('password'), 
+            'role' => 'manager',
+        ]);
+
+        User::create([
+            'name' => 'Maulana Manager',
+            'email' => 'manager3@example.com',
+            'password' => Hash::make('password'), 
+            'role' => 'manager',
+        ]);
+
+        User::create([
+            'name' => 'Ibrahim Manager',
+            'email' => 'manager4@example.com',
+            'password' => Hash::make('password'), 
+            'role' => 'manager',
+        ]);
+
+        User::create([
+            'name' => 'Aper Manager',
+            'email' => 'manager5@example.com',
+            'password' => Hash::make('password'), 
+            'role' => 'manager',
+        ]);
+
+        // Kasir User
+        User::create([
+            'name' => 'Malik Kasir',
             'email' => 'kasir@example.com',
-            'password' => Hash::make('password'), // Replace with a secure password
+            'password' => Hash::make('password'), 
             'role' => 'kasir',
         ]);
 
-        $admin = User::find(1); // ID 1 untuk admin
-        $admin->assignRole('admin');
+        // Supervisor User
+        User::create([
+            'name' => 'Malik SV',
+            'email' => 'supervisor@example.com',
+            'password' => Hash::make('password'), 
+            'role' => 'supervisor',
+        ]);
 
+        // Gudan User
+        User::create([
+            'name' => 'Malik Gudang',
+            'email' => 'gudang@example.com',
+            'password' => Hash::make('password'), 
+            'role' => 'gudang',
+        ]);
+
+        $admin = User::find(1); 
+        $admin->assignRole('admin');
 
         $manager = User::find(2);
         $manager->assignRole('manager');
 
-        $kasir = User::find(3);
+        $kasir = User::find(7);
         $kasir->assignRole('kasir');
+
+        $supervisor = User::find(8);
+        $supervisor->assignRole('supervisor');
+
+        $gudang = User::find(9);
+        $gudang->assignRole('gudang');
     }
 }

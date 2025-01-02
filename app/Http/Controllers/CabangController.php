@@ -11,13 +11,13 @@ class CabangController extends Controller
     public function index()
     {
         $data['cabang_toko'] = Cabang::with('users')->get();
-        return view('cabang.index', $data);
+        return view('admin/cabang.index', $data);
     }
 
     public function create()
     {
-        $managers = User::where('role', 'manager')->get(); // Ambil pengguna dengan role manager
-        return view('cabang.create', compact('managers'));
+        $managers = User::where('role', 'manager')->get(); 
+        return view('admin/cabang.create', compact('managers'));
     }
 
     public function store(Request $request)

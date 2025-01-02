@@ -18,4 +18,14 @@ class Cabang extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function stok()
+    {
+        return $this->hasMany(Stok::class, 'cabang_id');
+    }
+
+    public function produk()
+    {
+        return $this->hasMany(Produk::class, 'cabang_id');
+    }
 }

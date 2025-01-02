@@ -15,16 +15,10 @@ class RoleMiddleware
      */
     public function handle($request, Closure $next, $role)
     {
-        // Pastikan pengguna telah login
-        if (!Auth::check()) {
-            return redirect('login');
+        if (auth()->check() && auth()->user()->role === $role) {
+            return $next($request);
         }
 
-        // Cek apakah pengguna memiliki role yang sesuai
-        if (Auth::user()->role !== $role) {
-            abort(403, 'Unauthorized'); // Atau redirect ke halaman lain
-        }
-
-        return $next($request);
+        abort(403, 'User does not have the right roles.');
     }
 }

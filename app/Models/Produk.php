@@ -13,4 +13,19 @@ class Produk extends Model
         'harga',
         'stok',
     ];
+
+    public function stok()
+    {
+        return $this->hasMany(Stok::class, 'produk_id');
+    }
+
+    public function cabang()
+    {
+        return $this->belongsTo(Cabang::class, 'cabang_id');
+    }
+
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'produk_id');
+    }
 }

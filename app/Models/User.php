@@ -47,4 +47,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function cabang()
+    {
+        return $this->hasOne(Cabang::class);
+    }
 }
