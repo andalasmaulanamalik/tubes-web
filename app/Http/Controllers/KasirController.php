@@ -75,6 +75,6 @@ class KasirController extends Controller
         $pdf->save(storage_path('app/faktur/faktur-transaksi-' . $transaksi->id . '.pdf'));
     
         // Redirect dengan pesan sukses
-        return redirect()->route('penjualan')->with('success', 'Penjualan berhasil disimpan dan faktur dibuat.');
+        return view('kasir/kasir-transaksi.struk', compact('transaksi'));
     }
 }
