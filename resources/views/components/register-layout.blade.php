@@ -1,3 +1,10 @@
+{{-- <!-- resources/views/components/register-layout.blade.php -->
+<div class="min-h-screen flex justify-center items-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+        {{ $slot }}
+    </div>
+</div> --}}
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -26,16 +33,16 @@
                 {{ $slot }}
             </div>
         </div> --}}
-        <div class="min-h-screen py-40" style="background-image: linear-gradient(115deg, #4d3a74, #aa72aa)">
+        <div class="min-h-screen py-40" style="background-image: linear-gradient(115deg,  #aa72aa, #e3d6ff)">
             <div class="container mx-auto">
-              <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden" style="background-image: linear-gradient(115deg, #4d3a74, #aa72aa)">
-                <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('images/toko2.jpg');">
+              <div class="flex flex-col lg:flex-row w-10/12 lg:w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden" style="background-image: linear-gradient(115deg,  #aa72aa, #7a65a3)">
+                <div class="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center" style="background-image: url('images/toko1.jpg');">
                 </div>
                 <div class="w-full lg:w-1/2 py-16 px-12">
-                    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white overflow-hidden sm:rounded-lg" style="background-image: linear-gradient(115deg, #4d3a74, #aa72aa)">
-                        <h2 class="text-white text-3xl mb-4">Login</h2>
-                        <p class="text-white mb-4">
-                            Selamat Datang Di Toko Kami!
+                    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white overflow-hidden sm:rounded-lg" style="background-image: linear-gradient(115deg, #aa72aa, #4d3a74)">
+                        <h2 class="text-black text-3xl mb-4">Register</h2>
+                        <p class="text-black mb-4"> 
+                            Create your account. It’s free and only take a minute
                         </p>
                         {{ $slot }}
                     </div>
@@ -46,3 +53,4 @@
           <script type="module" src="/main.js"></script>
     </body>
 </html>
+
